@@ -20,7 +20,7 @@ function Play(){
   },[viper.body]) 
 
   useEffect(()=>{
-    const action = setInterval(walk,500)
+    const action = setInterval(walk,200)
     
     window.addEventListener("keydown", (event: KeyboardEvent)=>{
       switch(event.key){
