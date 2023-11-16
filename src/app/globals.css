@@ -3,9 +3,25 @@
 @tailwind utilities;
 
 .center-container{
-    @apply flex items-center justify-center flex-col
+  @apply flex items-center justify-center flex-col;
 }
 
 .bordered{
-    @apply border-[1px] border-slate-300
+  @apply border-[1px] border-slate-300;
+}
+
+.food, .head, .body{
+  @apply block w-[25px] h-[25px] absolute transition-all ease-linear;
+}
+
+.body{
+  @apply bg-slate-300 
+}
+
+.head{
+  @apply bg-green-300
+}
+
+.food{
+  @apply bg-yellow-400;
 }
