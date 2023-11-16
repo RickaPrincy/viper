@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.center-container{
+    @apply flex items-center justify-center flex-col
+}
+
+.bordered{
+    @apply border-[1px] border-slate-300
+}
