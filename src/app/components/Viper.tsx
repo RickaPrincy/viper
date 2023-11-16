@@ -29,7 +29,7 @@ function Viper(){
   }
   
   useEffect(()=>{
-    const action = setInterval(walk,1000)
+    const action = setInterval(walk,500)
     
     return ()=> clearInterval(action);
   },[])

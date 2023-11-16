@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.main-button{
+  @apply px-10 py-[7px] text-[18px] hover:bg-[rgba(255,255,255,.1)] bordered rounded-md
+}
+
 .center-container{
   @apply flex items-center justify-center flex-col;
 }
