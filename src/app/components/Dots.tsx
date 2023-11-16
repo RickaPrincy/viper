@@ -1,7 +1,7 @@
 import { CASE_SIZE, Position } from "../utils"
 
 type DotsProps = {
-  type: "Head" | "Food" | "Body",
+  type: "head" | "food" | "body",
   position: Position
 }
 
@@ -10,6 +10,6 @@ export function Dots(props: DotsProps){
   const x = ( position.x - 1 ) * CASE_SIZE, y = ( position.y - 1 ) * CASE_SIZE;
 
   return(
-    <div  className={type.toLocaleLowerCase()} style={{ left: x, top: y }} />
+    <div  className={type} style={{ left: x, top: y }} />
   )
 }
