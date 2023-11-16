@@ -21,7 +21,29 @@ function Play(){
 
   useEffect(()=>{
     const action = setInterval(walk,500)
-    return ()=> clearInterval(action);
+    
+    window.addEventListener("keydown", (event: KeyboardEvent)=>{
+      switch(event.key){
+        case "ArrowDown":
+          setViper(state => ({...state, direction : "down"}))
+          break;
+        case "ArrowUp":
+          setViper(state => ({...state, direction : "up"}))
+          break;
+        case "ArrowLeft":
+          setViper(state => ({...state, direction : "left"}))
+          break;
+        case "ArrowRight":
+          setViper(state => ({...state, direction : "right"}))
+          break;
+        default: break;
+      }
+    })
+
+    return ()=> { 
+      window.removeEventListener("keydown",()=>{});
+      clearInterval(action);
+    }
   },[])
 
   return (
