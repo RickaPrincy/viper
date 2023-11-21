@@ -31,15 +31,7 @@ export function getIncrement(direction: Direction) {
 export function getNewBody(oldBody: ViperState){
 	const {direction, body} = oldBody
 	const { x, y }= getIncrement(direction);
-	const newBody: Position[] = [];
-	
-	for(let i = body.length - 1 ; i >= 0 ; i--){
-		const oldPosition = body[i];
-		const newPosition = i === 0 ? { x: oldPosition.x + x, y : oldPosition.y + y } : body[i - 1];
-		newBody.unshift(newPosition);
-	}
-	
-	return { direction, body: newBody };
+	return { direction, body: [{x: body[0].x + x, y: body[0].y + y }, ...body.slice(0,body.length - 1) ]};
 }
 
 export function getRandomPosition(takenPosition: Position[]){
